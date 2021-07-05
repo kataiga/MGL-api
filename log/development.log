@@ -1,0 +1,550 @@
+  [1m[35m (858.4ms)[0m  [1m[35mCREATE DATABASE "MGL_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (901.3ms)[0m  [1m[35mCREATE DATABASE "MGL_api_test" ENCODING = 'unicode'[0m
+Started GET "/" for 172.21.0.1 at 2021-06-30 22:31:52 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.7ms | Allocations: 463)
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 3929)
+
+
+Started GET "/favicon.ico" for 172.21.0.1 at 2021-06-30 22:31:52 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/games" for 172.21.0.1 at 2021-06-30 22:54:40 +0000
+  [1m[35m (25.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (30.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210630224420_create_games.rb
+
+
+):
+  
+activerecord (6.1.3.1) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.3.1) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.3.1) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activesupport (6.1.3.1) lib/active_support/evented_file_update_checker.rb:65:in `execute_if_updated'
+activerecord (6.1.3.1) lib/active_record/migration.rb:597:in `block in call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.3.1) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started POST "/" for 172.21.0.1 at 2021-06-30 22:56:32 +0000
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210630224420_create_games.rb
+
+
+):
+  
+activerecord (6.1.3.1) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.3.1) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.3.1) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.3.1) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.3.1) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(278810322348460980)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGames (20210630224420)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.7ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210630224420"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-06-30 23:06:19.255260"], ["updated_at", "2021-06-30 23:06:19.255260"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(278810322348460980)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(278810322348460980)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(278810322348460980)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(278810322348460980)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGames (20210630224420)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE "games"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20210630224420"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(278810322348460980)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(278810322348460980)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGames (20210630224420)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.6ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "game_name" character varying, "description" text, "release" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210630224420"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(278810322348460980)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 172.21.0.1 at 2021-06-30 23:07:25 +0000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.3ms | Allocations: 186)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 843)
+
+
+Started GET "/game" for 172.21.0.1 at 2021-06-30 23:07:30 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/game"):
+  
+Started GET "/games" for 172.21.0.1 at 2021-06-30 23:07:33 +0000
+Processing by GamesController#index as HTML
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:3:in `index'
+Completed 200 OK in 8ms (Views: 2.3ms | ActiveRecord: 3.6ms | Allocations: 1913)
+
+
+Started POST "/" for 172.21.0.1 at 2021-06-30 23:07:44 +0000
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started POST "/games" for 172.21.0.1 at 2021-06-30 23:08:30 +0000
+  
+ActionController::RoutingError (No route matches [POST] "/games"):
+  
+Started GET "/games" for 172.21.0.1 at 2021-06-30 23:08:36 +0000
+Processing by GamesController#index as */*
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 628)
+
+
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Create (1.1ms)[0m  [1m[32mINSERT INTO "games" ("game_name", "description", "release", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["game_name", "test"], ["description", "test"], ["release", "2010-11-11"], ["created_at", "2021-06-30 23:20:58.539840"], ["updated_at", "2021-06-30 23:20:58.539840"]]
+  [1m[36mTRANSACTION (203.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/games" for 172.21.0.1 at 2021-06-30 23:21:17 +0000
+Processing by GamesController#index as */*
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:3:in `index'
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 12.8ms | Allocations: 5876)
+
+
+Started POST "/games" for 172.21.0.1 at 2021-06-30 23:38:59 +0000
+Processing by GamesController#create as */*
+Completed 400 Bad Request in 1ms (Allocations: 532)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: game
+Did you mean?  action
+               controller):
+  
+app/controllers/games_controller.rb:20:in `game_params'
+app/controllers/games_controller.rb:8:in `create'
+Started POST "/games" for 172.21.0.1 at 2021-06-30 23:39:21 +0000
+Processing by GamesController#create as */*
+Completed 400 Bad Request in 0ms (Allocations: 158)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: game
+Did you mean?  action
+               controller):
+  
+app/controllers/games_controller.rb:20:in `game_params'
+app/controllers/games_controller.rb:8:in `create'
+Started POST "/games" for 172.21.0.1 at 2021-06-30 23:43:35 +0000
+Processing by GamesController#create as */*
+Completed 400 Bad Request in 1ms (Allocations: 488)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: game
+Did you mean?  action
+               controller):
+  
+app/controllers/games_controller.rb:20:in `game_params'
+app/controllers/games_controller.rb:8:in `create'
+Started POST "/games" for 172.21.0.1 at 2021-06-30 23:47:04 +0000
+Processing by GamesController#create as */*
+Completed 400 Bad Request in 1ms (Allocations: 488)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: game
+Did you mean?  action
+               controller):
+  
+app/controllers/games_controller.rb:20:in `game_params'
+app/controllers/games_controller.rb:8:in `create'
+Started POST "/games" for 172.21.0.1 at 2021-06-30 23:48:32 +0000
+Processing by GamesController#create as */*
+  Parameters: {"game_name"=>"The game", "description"=>"the game made by tow wierdo", "release"=>"1997-09-24", "game"=>{"game_name"=>"The game", "description"=>"the game made by tow wierdo", "release"=>"1997-09-24"}}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 5.8ms | Allocations: 4478)
+
+
+  
+NameError (undefined local variable or method `game' for #<GamesController:0x0000000000a4b0>
+Did you mean?  @game):
+  
+app/controllers/games_controller.rb:10:in `create'
+Started POST "/games" for 172.21.0.1 at 2021-06-30 23:48:51 +0000
+Processing by GamesController#create as */*
+  Parameters: {"game_name"=>"The game", "description"=>"the game made by tow wierdo", "release"=>"1997-09-24", "game"=>{"game_name"=>"The game", "description"=>"the game made by tow wierdo", "release"=>"1997-09-24"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:10:in `create'
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("game_name", "description", "release", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["game_name", "The game"], ["description", "the game made by tow wierdo"], ["release", "1997-09-24"], ["created_at", "2021-06-30 23:48:51.677773"], ["updated_at", "2021-06-30 23:48:51.677773"]]
+  ↳ app/controllers/games_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:10:in `create'
+Completed 201 Created in 14ms (Views: 0.4ms | ActiveRecord: 8.5ms | Allocations: 4747)
+
+
+Started GET "/games" for 172.21.0.1 at 2021-06-30 23:49:03 +0000
+Processing by GamesController#index as */*
+  Parameters: {"game_name"=>"The game", "description"=>"the game made by tow wierdo", "release"=>"1997-09-24", "game"=>{"game_name"=>"The game", "description"=>"the game made by tow wierdo", "release"=>"1997-09-24"}}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 980)
+
+
+Started GET "/api/v1/games" for 172.21.0.1 at 2021-07-01 00:38:57 +0000
+  
+SyntaxError (/app/app/models/game.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...alidates :game_name, presence :true, length: {minimum:1}
+...                              ^
+/app/app/models/game.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...idates :description, presence :true, length: {minimum:10}
+...                              ^
+/app/app/models/game.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+... validates :release, presence :true
+...                              ^
+):
+  
+app/models/game.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/api/v1/games" for 172.21.0.1 at 2021-07-01 00:41:50 +0000
+  
+SyntaxError (/app/app/models/game.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...alidates :game_name, presence :true, length: {minimum:1}
+...                              ^
+/app/app/models/game.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...idates :description, presence :true, length: {minimum:10}
+...                              ^
+/app/app/models/game.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+... validates :release, presence :true
+...                              ^
+):
+  
+app/models/game.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/api/v1/games" for 172.21.0.1 at 2021-07-01 00:43:30 +0000
+  
+SyntaxError (/app/app/models/game.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...alidates :game_name, presence :true, length: {minimum: 1 }
+...                              ^
+/app/app/models/game.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...idates :description, presence :true, length: {minimum: 10 }
+...                              ^
+/app/app/models/game.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+... validates :release, presence :true
+...                              ^
+):
+  
+app/models/game.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/api/v1/games" for 172.21.0.1 at 2021-07-01 00:43:44 +0000
+  
+SyntaxError (/app/app/models/game.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...alidates :game_name, presence :true, length: { minimum: 1 }
+...                              ^
+/app/app/models/game.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...idates :description, presence :true, length: { minimum: 10 }
+...                              ^
+/app/app/models/game.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+... validates :release, presence :true
+...                              ^
+):
+  
+app/models/game.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/games" for 172.21.0.1 at 2021-07-01 00:44:55 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/games"):
+  
+Started GET "/api/v1/games" for 172.21.0.1 at 2021-07-01 00:45:05 +0000
+Processing by Api::V1::GamesController#index as HTML
+Completed 500 Internal Server Error in 7ms (Allocations: 1162)
+
+
+  
+SyntaxError (/app/app/models/game.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...alidates :game_name, presence :true, length: { minimum: 1 }
+...                              ^
+/app/app/models/game.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...idates :description, presence :true, length: { minimum: 10 }
+...                              ^
+/app/app/models/game.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+... validates :release, presence :true
+...                              ^
+):
+  
+app/models/game.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:2: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/game.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/api/v1/games_controller.rb:6:in `index'
+Started GET "/api/v1/games" for 172.21.0.1 at 2021-07-01 00:46:53 +0000
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:6:in `index'
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 8.7ms | Allocations: 6277)
+
+
+Started GET "/" for 172.18.0.1 at 2021-07-02 21:46:48 +0000
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.1.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.9ms | Allocations: 463)
+Completed 200 OK in 15ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 3918)
+
+
+Started GET "/favicon.ico" for 172.18.0.1 at 2021-07-02 21:46:48 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api/v1/games" for 172.18.0.1 at 2021-07-02 21:46:54 +0000
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (13.7ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:6:in `index'
+Completed 200 OK in 34ms (Views: 11.3ms | ActiveRecord: 19.4ms | Allocations: 5400)
+
+
+Started DELETE "/api/v1/games/1" for 172.18.0.1 at 2021-07-02 21:47:14 +0000
+Processing by Api::V1::GamesController#destroy as */*
+  Parameters: {"game_name"=>"The game", "description"=>"the game made by tow wierdo", "release"=>"1997-09-24", "id"=>"1", "game"=>{"game_name"=>"The game", "description"=>"the game made by tow wierdo", "release"=>"1997-09-24"}}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:20:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:20:in `destroy'
+  [1m[36mGame Destroy (0.6ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:20:in `destroy'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:20:in `destroy'
+Completed 204 No Content in 14ms (ActiveRecord: 5.6ms | Allocations: 2562)
+
+
+Started GET "/api/v1/games" for 172.18.0.1 at 2021-07-02 21:47:17 +0000
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 704)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(278810322348460980)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEditors (20210705085648)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (35.1ms)[0m  [1m[35mCREATE TABLE "editors" ("id" bigserial primary key, "company_name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210705085648"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(278810322348460980)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(278810322348460980)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddEditorToGames (20210705092707)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "games" ADD "editor_id" bigint[0m
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE INDEX "index_games_on_editor_id" ON "games" ("editor_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210705092707"]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(278810322348460980)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEditor Create (0.9ms)[0m  [1m[32mINSERT INTO "editors" ("company_name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["company_name", "Bethesda Softworks"], ["created_at", "2021-07-05 09:34:35.295821"], ["updated_at", "2021-07-05 09:34:35.295821"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Create (1.2ms)[0m  [1m[32mINSERT INTO "games" ("game_name", "description", "release", "created_at", "updated_at", "editor_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["game_name", "The Elder Scrolls IV: Oblivion"], ["description", "Dans cet épisode, le héros doit aider l'héritier du trône, Martin Septim, à monter sur le trône de son père assassiné et éviter ainsi à l'empire de tomber aux mains malveillantes de Mehrunes Dagon, prince daedrique du chaos."], ["release", "2006-03-21"], ["created_at", "2021-07-05 09:39:11.696135"], ["updated_at", "2021-07-05 09:39:11.696135"], ["editor_id", 1]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/games" for 172.18.0.1 at 2021-07-05 09:43:18 +0000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:6:in `index'
+Completed 200 OK in 20ms (Views: 9.4ms | ActiveRecord: 4.5ms | Allocations: 6402)
+
+
+Started GET "/favicon.ico" for 172.18.0.1 at 2021-07-05 09:43:18 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(278810322348460980)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlatforms (20210705104711)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.2ms)[0m  [1m[35mCREATE TABLE "platforms" ("id" bigserial primary key, "platform_name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210705104711"]]
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableGamePlatform (20210705105232)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "games_platforms" ("game_id" bigint NOT NULL, "platform_id" bigint NOT NULL)[0m
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE INDEX "index_games_platforms_on_game_id_and_platform_id" ON "games_platforms" ("game_id", "platform_id")[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE INDEX "index_games_platforms_on_platform_id_and_game_id" ON "games_platforms" ("platform_id", "game_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210705105232"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(278810322348460980)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPlatform Load (1.1ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "games_platforms" ON "platforms"."id" = "games_platforms"."platform_id" WHERE "games_platforms"."game_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["game_id", 3], ["LIMIT", 11]]
+  [1m[36mPlatform Load (0.8ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "games_platforms" ON "platforms"."id" = "games_platforms"."platform_id" WHERE "games_platforms"."game_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["game_id", 3], ["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(278810322348460980)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGenres (20210705120327)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.4ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "genre_name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210705120327"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateThemes (20210705120415)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.0ms)[0m  [1m[35mCREATE TABLE "themes" ("id" bigserial primary key, "theme_name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210705120415"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableGameGenre (20210705121148)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "games_genres" ("game_id" bigint NOT NULL, "genre_id" bigint NOT NULL)[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE INDEX "index_games_genres_on_game_id_and_genre_id" ON "games_genres" ("game_id", "genre_id")[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE INDEX "index_games_genres_on_genre_id_and_game_id" ON "games_genres" ("genre_id", "game_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210705121148"]]
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableGameTheme (20210705121213)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "games_themes" ("game_id" bigint NOT NULL, "theme_id" bigint NOT NULL)[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE INDEX "index_games_themes_on_game_id_and_theme_id" ON "games_themes" ("game_id", "theme_id")[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE INDEX "index_games_themes_on_theme_id_and_game_id" ON "games_themes" ("theme_id", "game_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210705121213"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(278810322348460980)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/games" for 172.20.0.1 at 2021-07-05 14:10:02 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 7.3ms | ActiveRecord: 5.3ms | Allocations: 11602)
+
+
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "games_genres" ON "genres"."id" = "games_genres"."genre_id" WHERE "games_genres"."game_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["game_id", 3], ["LIMIT", 11]]
+  [1m[36mTheme Load (0.5ms)[0m  [1m[34mSELECT "themes".* FROM "themes" INNER JOIN "games_themes" ON "themes"."id" = "games_themes"."theme_id" WHERE "games_themes"."game_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["game_id", 3], ["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(278810322348460980)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDevlopers (20210705144027)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.4ms)[0m  [1m[35mCREATE TABLE "devlopers" ("id" bigserial primary key, "devloper_name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210705144027"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDevloperToGames (20210705144334)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "games" ADD "devloper_id" bigint[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE INDEX "index_games_on_devloper_id" ON "games" ("devloper_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210705144334"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(278810322348460980)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
