@@ -20,8 +20,9 @@ controller
         la fonction index sert a envoyer toutes les données
 
         create me permet d'ajouter une entrée dans ma bdd j'utilise un if else pour verifier si l'enregistrement c'est correctement effectuer, si c'est le cas je 
-        renvois l'entré sous format json sinon je renvois les erreurs, pour les status code plutot que de mettre directement les valeur j'utilise la fonction intégré a rails qui me permet 
-        de simplement mettre :created, :unprocessable_entity, et qui renvera les bon status code, ca facilite la lisibilité on sais tout de suite ce qui est renvoyer
+        renvois l'entré sous format json sinon je renvois les erreurs, pour les status code plutot que de mettre directement les valeur j'utilise la fonction intégré 
+        a rails qui me permet de simplement mettre :created, :unprocessable_entity, et qui renvera les bon status code, ca facilite la lisibilité on sais tout de suite 
+        ce qui est renvoyer
 
         la fonction destroy est basic on cherche une instance de l'objet game avec l'id comme parametre et on le delet de la bdd, puis on renvois le header 204 avec 
         head :no_content
@@ -29,3 +30,16 @@ controller
 models
     game
         j'ai définis les validation qui permette de faire le traitement de données et verifier qu'elle soit conforme a ce que je veux
+
+models associations
+
+    pour associé des models has many/has one on utilise la comande "rails g migration add_thatmodel_to_thismodel thatmodel:references" puis un fait un db migrate
+    en suite il faut alle dans les models concerné pour ajouter les apartenance on a crée une foreign key
+
+    pour associé des models has many/has many on utilise une table de jointure [inseré def table jointure] en utilisant la 
+    comande "rails g migration CreateJoinTableModel1Model2 model1 model2" avant de migrate on peut aller rajouter un indexage qui permetera de chercher plus rapidement
+    dans la table sans devoir passer en revu toutes les entré ce qui est un gain de temps enorme, il ne fou
+
+    game -> editor
+        un editor "has many games" mais un jeu "has one editor" le but et de ne pas repter des information inutilement plutot que de rentrer l'éditeur a chaque nouveau
+        jeu on va l'associé a une liste d'editeur déja presente vue que les éditeut n'édite pas qu'un seul jeu donc répéter cette info a chaque jeu est inutile
