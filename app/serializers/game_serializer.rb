@@ -13,11 +13,7 @@ class GameSerializer < ActiveModel::Serializer
   end
 
   def platforms
-    platforms = []
-    object&.platforms.each do |p|
-      platforms << p.platform_name
-    end
-    platforms
+    object&.platforms.map{|p| p[:platform_name]}
   end
   
 end
