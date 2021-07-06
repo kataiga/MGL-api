@@ -1,8 +1,6 @@
 class GameSerializer < ActiveModel::Serializer
   attributes :id, :game_name, :description, :release, :editor, :devloper, :platforms
 
-
-  has_many :platforms
   has_many :themes
   has_many :genres
 
@@ -14,4 +12,12 @@ class GameSerializer < ActiveModel::Serializer
     object&.devloper&.devloper_name
   end
 
+  def platforms
+    platforms = []
+    object&.platforms.each do |p|
+      platforms << p.platform_name
+    end
+    platforms
+  end
+  
 end
