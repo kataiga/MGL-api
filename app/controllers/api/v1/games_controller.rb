@@ -3,7 +3,10 @@ module Api
     class GamesController < ApplicationController
       def index
         # renvois toutes les donnees de la db sous forme de json
-        render json: Game.all
+        games = Game.all
+
+        # render json: GamesRepresenter.new(games).as_json
+        render json: games
       end
 
       def create
