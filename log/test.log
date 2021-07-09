@@ -421,3 +421,76 @@ Processing by Api::V1::GamesController#destroy as HTML
 Completed 204 No Content in 3ms (ActiveRecord: 1.2ms | Allocations: 602)
   [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "games"[0m
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (74.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "MGL_api_test"[0m
+  [1m[35m (906.8ms)[0m  [1m[35mCREATE DATABASE "MGL_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "devlopers" CASCADE[0m
+  [1m[35m (27.6ms)[0m  [1m[35mCREATE TABLE "devlopers" ("id" bigserial primary key, "devloper_name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "editors" CASCADE[0m
+  [1m[35m (24.1ms)[0m  [1m[35mCREATE TABLE "editors" ("id" bigserial primary key, "company_name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "games" CASCADE[0m
+  [1m[35m (30.3ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "game_name" character varying, "description" text, "release" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "editor_id" bigint, "devloper_id" bigint)[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE INDEX "index_games_on_devloper_id" ON "games" ("devloper_id")[0m
+  [1m[35m (18.1ms)[0m  [1m[35mCREATE INDEX "index_games_on_editor_id" ON "games" ("editor_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "games_genres" CASCADE[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "games_genres" ("game_id" bigint NOT NULL, "genre_id" bigint NOT NULL)[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE INDEX "index_games_genres_on_game_id_and_genre_id" ON "games_genres" ("game_id", "genre_id")[0m
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE INDEX "index_games_genres_on_genre_id_and_game_id" ON "games_genres" ("genre_id", "game_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "games_platforms" CASCADE[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "games_platforms" ("game_id" bigint NOT NULL, "platform_id" bigint NOT NULL)[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE INDEX "index_games_platforms_on_game_id_and_platform_id" ON "games_platforms" ("game_id", "platform_id")[0m
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE INDEX "index_games_platforms_on_platform_id_and_game_id" ON "games_platforms" ("platform_id", "game_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "games_themes" CASCADE[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "games_themes" ("game_id" bigint NOT NULL, "theme_id" bigint NOT NULL)[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE INDEX "index_games_themes_on_game_id_and_theme_id" ON "games_themes" ("game_id", "theme_id")[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE INDEX "index_games_themes_on_theme_id_and_game_id" ON "games_themes" ("theme_id", "game_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "genres" CASCADE[0m
+  [1m[35m (30.2ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "genre_name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "platforms" CASCADE[0m
+  [1m[35m (25.5ms)[0m  [1m[35mCREATE TABLE "platforms" ("id" bigserial primary key, "platform_name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "themes" CASCADE[0m
+  [1m[35m (26.0ms)[0m  [1m[35mCREATE TABLE "themes" ("id" bigserial primary key, "theme_name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (31.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210705144334)[0m
+  [1m[35m (4.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210630224420),
+(20210705085648),
+(20210705092707),
+(20210705104711),
+(20210705105232),
+(20210705120327),
+(20210705120415),
+(20210705121148),
+(20210705121213),
+(20210705144027);
+
+[0m
+  [1m[35m (26.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2021-07-09 15:29:51.140496"], ["updated_at", "2021-07-09 15:29:51.140496"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "85c2373a62000d14497b089a79cbb445f4a663df"], ["created_at", "2021-07-09 15:29:51.152096"], ["updated_at", "2021-07-09 15:29:51.152096"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEditor Load (0.3ms)[0m  [1m[34mSELECT "editors".* FROM "editors" WHERE "editors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDevloper Load (0.2ms)[0m  [1m[34mSELECT "devlopers".* FROM "devlopers" WHERE "devlopers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
