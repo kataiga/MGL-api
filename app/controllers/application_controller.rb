@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+        include DeviseTokenAuth::Concerns::SetUserByToken
     #quanf l'erreur RecordNotDestroyed et renvoyer peut importe ou dans l'application on utilise la methode not_destroyed
     rescue_from ActiveRecord::RecordNotDestroyed, with: :not_destroyed
 
