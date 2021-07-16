@@ -18,4 +18,13 @@ class User < ActiveRecord::Base
   # validates :name, presence: true
   # validates :email, presence: true
 
+
+  # check if no insult in nickname and name
+  # nickname: no blank, no special chars exept _
+  # name: blank alowed only between fName and lName, no special chars exept "' -"  
+
+  private
+
+
+
 end
