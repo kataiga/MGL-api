@@ -18794,3 +18794,441 @@ Processing by Api::V1::GamesController#index as HTML
 Completed 200 OK in 211ms (Views: 204.4ms | ActiveRecord: 26.8ms | Allocations: 135271)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT VERSION()[0m
+  ↳ (erb):38:in `migration_template'
+Started GET "/favicon.ico" for 172.20.0.1 at 2021-07-13 13:31:57 +0000
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210709175829_devise_token_auth_create_users.rb
+
+
+):
+  
+activerecord (6.1.3.1) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.3.1) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.3.1) lib/active_support/evented_file_update_checker.rb:59:in `execute'
+activerecord (6.1.3.1) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.3.1) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(278810322348460980)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseTokenAuthCreateUsers (20210709175829)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (33.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "provider" character varying DEFAULT 'email' NOT NULL, "uid" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "allow_password_change" boolean DEFAULT FALSE, "remember_created_at" timestamp, "confirmation_token" character varying, "confirmed_at" timestamp, "confirmation_sent_at" timestamp, "unconfirmed_email" character varying, "failed_attempts" integer DEFAULT 0 NOT NULL, "unlock_token" character varying, "locked_at" timestamp, "name" character varying, "nickname" character varying, "image" character varying, "email" character varying, "tokens" json, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_uid_and_provider" ON "users" ("uid", "provider")[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_unlock_token" ON "users" ("unlock_token")[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_nickname" ON "users" ("nickname")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210709175829"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(278810322348460980)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "//api/v1/auth/sign_up" for 172.20.0.1 at 2021-07-13 14:40:38 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/auth/sign_up"):
+  
+Started POST "//api/v1/auth/sign_up" for 172.20.0.1 at 2021-07-13 14:43:15 +0000
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/auth/sign_up"):
+  
+Started POST "//api/v1/auth" for 172.20.0.1 at 2021-07-13 14:45:41 +0000
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"name"=>"name", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"name", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 422 Unprocessable Entity in 246ms (Views: 3.4ms | ActiveRecord: 7.0ms | Allocations: 29596)
+
+
+Started POST "//api/v1/auth" for 172.20.0.1 at 2021-07-13 14:51:21 +0000
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"name"=>"name", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"name", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 422 Unprocessable Entity in 198ms (Views: 0.5ms | Allocations: 817)
+
+
+Started POST "/api/v1/auth" for 172.20.0.1 at 2021-07-13 14:51:55 +0000
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"name"=>"jhon doe", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"jhon doe", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 422 Unprocessable Entity in 200ms (Views: 0.4ms | Allocations: 816)
+
+
+Started POST "/api/v1/auth" for 172.20.0.1 at 2021-07-13 14:56:12 +0000
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"name"=>"jhon doe", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"jhon doe", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 422 Unprocessable Entity in 196ms (Views: 0.4ms | Allocations: 808)
+
+
+Started POST "/api/v1/auth" for 172.20.0.1 at 2021-07-13 14:56:24 +0000
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"name"=>"name", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "phone_number"=>"+33600000000", "registration"=>{"name"=>"name", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "phone_number"=>"+33600000000"}}
+[31mUnpermitted parameters: :name, :nickname, :phone_number, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :phone_number, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :phone_number, :registration[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 422 Unprocessable Entity in 193ms (Views: 0.4ms | Allocations: 825)
+
+
+Started POST "/api/v1/auth" for 172.20.0.1 at 2021-07-13 14:57:36 +0000
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"name"=>"jhon doe", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"jhon doe", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 422 Unprocessable Entity in 194ms (Views: 0.4ms | Allocations: 808)
+
+
+Started POST "/api/v1/auth" for 172.20.0.1 at 2021-07-13 15:05:15 +0000
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"name"=>"jhon doe", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"jhon doe", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 422 Unprocessable Entity in 217ms (Views: 0.6ms | ActiveRecord: 4.7ms | Allocations: 12118)
+
+
+Started POST "/api/v1/auth" for 172.20.0.1 at 2021-07-13 15:05:31 +0000
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"name"=>"jhon doe", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"name"=>"jhon doe", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :name, :nickname, :registration[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 422 Unprocessable Entity in 223ms (Views: 0.9ms | ActiveRecord: 5.7ms | Allocations: 10781)
+
+
+Started POST "/api/v1/auth" for 172.20.0.1 at 2021-07-13 15:05:55 +0000
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"confirm_success_url"=>"-", "name"=>"jhon doe", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"confirm_success_url"=>"-", "name"=>"jhon doe", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :confirm_success_url, :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :confirm_success_url, :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :confirm_success_url, :name, :nickname, :registration[0m
+Completed 500 Internal Server Error in 237ms (ActiveRecord: 0.0ms | Allocations: 5696)
+
+
+  
+NoMethodError (undefined method `password_confirmation_emptiness' for #<User id: nil, provider: "email", uid: "", allow_password_change: [FILTERED], name: nil, nickname: nil, image: nil, email: "email@address.com", created_at: nil, updated_at: nil>
+Did you mean?  password_confirmation):
+  
+activemodel (6.1.3.1) lib/active_model/attribute_methods.rb:469:in `method_missing'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:604:in `block (2 levels) in default_terminator'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:603:in `catch'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:603:in `block in default_terminator'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:105:in `run_callbacks'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:824:in `_run_validation_callbacks'
+activemodel (6.1.3.1) lib/active_model/validations/callbacks.rb:117:in `run_validations!'
+activemodel (6.1.3.1) lib/active_model/validations.rb:337:in `valid?'
+activerecord (6.1.3.1) lib/active_record/validations.rb:68:in `valid?'
+activerecord (6.1.3.1) lib/active_record/validations.rb:84:in `perform_validations'
+activerecord (6.1.3.1) lib/active_record/validations.rb:47:in `save'
+activerecord (6.1.3.1) lib/active_record/transactions.rb:298:in `block in save'
+activerecord (6.1.3.1) lib/active_record/transactions.rb:354:in `block in with_transaction_returning_status'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/abstract/database_statements.rb:320:in `block in transaction'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/abstract/transaction.rb:310:in `block in within_new_transaction'
+activesupport (6.1.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:26:in `block (2 levels) in synchronize'
+activesupport (6.1.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (6.1.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (6.1.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (6.1.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/abstract/transaction.rb:308:in `within_new_transaction'
+activerecord (6.1.3.1) lib/active_record/connection_adapters/abstract/database_statements.rb:320:in `transaction'
+activerecord (6.1.3.1) lib/active_record/transactions.rb:350:in `with_transaction_returning_status'
+activerecord (6.1.3.1) lib/active_record/transactions.rb:298:in `save'
+activerecord (6.1.3.1) lib/active_record/suppressor.rb:44:in `save'
+devise_token_auth (1.1.5) app/controllers/devise_token_auth/registrations_controller.rb:43:in `create'
+actionpack (6.1.3.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.1.3.1) lib/abstract_controller/base.rb:228:in `process_action'
+actionpack (6.1.3.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.1.3.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:106:in `run_callbacks'
+actionpack (6.1.3.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.3.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.3.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.3.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.3.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.3.1) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.3.1) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.3.1) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.3.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.3.1) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.3.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.3.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.1.3.1) lib/action_dispatch/routing/mapper.rb:49:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started POST "/api/v1/auth" for 172.20.0.1 at 2021-07-13 15:06:07 +0000
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"confirm_success_url"=>"-", "name"=>"jhon doe", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"confirm_success_url"=>"-", "name"=>"jhon doe", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :confirm_success_url, :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :confirm_success_url, :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :confirm_success_url, :name, :nickname, :registration[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."provider" = $2 LIMIT $3[0m  [["email", "email@address.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("encrypted_password", "confirmation_token", "confirmation_sent_at", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["encrypted_password", "$2a$12$USqqpJYRBZh5UgHpAxo73O/D6/Xda5.4HUiYdVcLc2mjo5B9yt8RS"], ["confirmation_token", "TaWze4tt7FU6wWF3j_F_"], ["confirmation_sent_at", "2021-07-13 15:06:08.120753"], ["email", "email@address.com"], ["created_at", "2021-07-13 15:06:08.120643"], ["updated_at", "2021-07-13 15:06:08.120643"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering /usr/local/bundle/gems/devise_token_auth-1.1.5views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /usr/local/bundle/gems/devise_token_auth-1.1.5views/devise/mailer/confirmation_instructions.html.erb (Duration: 5.6ms | Allocations: 1854)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 13.0ms
+Completed 500 Internal Server Error in 266ms (ActiveRecord: 9.1ms | Allocations: 31163)
+
+
+  
+ActionView::Template::Error (undefined method `user_confirmation_url' for #<ActionDispatch::Routing::RoutesProxy:0x00007f2ff81d4988 @scope=#<Devise::Mailer:0x0000000000e3f8>, @routes=#<ActionDispatch::Routing::RouteSet:0x0000558546d32888>, @helpers=#<Module:0x0000558546d32428>, @script_namer=nil>):
+    2: 
+    3: <p><%= t '.confirm_link_msg' %> </p>
+    4: 
+    5: <p><%= link_to t('.confirm_account_link'), confirmation_url(@resource, {confirmation_token: @token, config: message['client-config'].to_s, redirect_url: message['redirect-url']}).html_safe %></p>
+  
+actionpack (6.1.3.1) lib/action_dispatch/routing/routes_proxy.rb:50:in `method_missing'
+devise (4.8.0) lib/devise/controllers/url_helpers.rb:53:in `block (4 levels) in generate_helpers!'
+devise_token_auth (1.1.5) app/views/devise/mailer/confirmation_instructions.html.erb:5
+actionview (6.1.3.1) lib/action_view/base.rb:247:in `public_send'
+actionview (6.1.3.1) lib/action_view/base.rb:247:in `_run'
+actionview (6.1.3.1) lib/action_view/template.rb:154:in `block in render'
+activesupport (6.1.3.1) lib/active_support/notifications.rb:205:in `instrument'
+actionview (6.1.3.1) lib/action_view/template.rb:345:in `instrument_render_template'
+actionview (6.1.3.1) lib/action_view/template.rb:152:in `render'
+actionview (6.1.3.1) lib/action_view/renderer/template_renderer.rb:61:in `block (2 levels) in render_template'
+activesupport (6.1.3.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.3.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.3.1) lib/active_support/notifications.rb:203:in `instrument'
+actionview (6.1.3.1) lib/action_view/renderer/template_renderer.rb:56:in `block in render_template'
+actionview (6.1.3.1) lib/action_view/renderer/template_renderer.rb:75:in `render_with_layout'
+actionview (6.1.3.1) lib/action_view/renderer/template_renderer.rb:55:in `render_template'
+actionview (6.1.3.1) lib/action_view/renderer/template_renderer.rb:11:in `render'
+actionview (6.1.3.1) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.1.3.1) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.1.3.1) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.1.3.1) lib/action_view/base.rb:273:in `in_rendering_context'
+actionview (6.1.3.1) lib/action_view/rendering.rb:116:in `_render_template'
+actionview (6.1.3.1) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.1.3.1) lib/abstract_controller/rendering.rb:25:in `render'
+actionmailer (6.1.3.1) lib/action_mailer/base.rb:958:in `block in collect_responses_from_templates'
+actionmailer (6.1.3.1) lib/action_mailer/base.rb:955:in `each'
+actionmailer (6.1.3.1) lib/action_mailer/base.rb:955:in `each'
+actionmailer (6.1.3.1) lib/action_mailer/base.rb:955:in `map'
+actionmailer (6.1.3.1) lib/action_mailer/base.rb:955:in `collect_responses_from_templates'
+actionmailer (6.1.3.1) lib/action_mailer/base.rb:933:in `collect_responses'
+actionmailer (6.1.3.1) lib/action_mailer/base.rb:841:in `mail'
+devise (4.8.0) lib/devise/mailers/helpers.rb:19:in `devise_mail'
+devise (4.8.0) app/mailers/devise/mailer.rb:9:in `confirmation_instructions'
+actionpack (6.1.3.1) lib/abstract_controller/base.rb:228:in `process_action'
+actionpack (6.1.3.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:117:in `block in run_callbacks'
+actiontext (6.1.3.1) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.3.1) lib/action_text/engine.rb:55:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.3.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.3.1) lib/abstract_controller/base.rb:165:in `process'
+actionmailer (6.1.3.1) lib/action_mailer/rescuable.rb:25:in `block in process'
+actionmailer (6.1.3.1) lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+actionmailer (6.1.3.1) lib/action_mailer/rescuable.rb:24:in `process'
+actionview (6.1.3.1) lib/action_view/rendering.rb:39:in `process'
+actionmailer (6.1.3.1) lib/action_mailer/base.rb:615:in `block in process'
+activesupport (6.1.3.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.3.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.3.1) lib/active_support/notifications.rb:203:in `instrument'
+actionmailer (6.1.3.1) lib/action_mailer/base.rb:614:in `process'
+actionmailer (6.1.3.1) lib/action_mailer/message_delivery.rb:128:in `block in processed_mailer'
+<internal:kernel>:90:in `tap'
+actionmailer (6.1.3.1) lib/action_mailer/message_delivery.rb:127:in `processed_mailer'
+actionmailer (6.1.3.1) lib/action_mailer/message_delivery.rb:118:in `deliver_now'
+devise (4.8.0) lib/devise/models/authenticatable.rb:204:in `send_devise_notification'
+devise_token_auth (1.1.5) app/models/devise_token_auth/concerns/user.rb:65:in `send_confirmation_instructions'
+devise_token_auth (1.1.5) app/controllers/devise_token_auth/registrations_controller.rb:48:in `create'
+actionpack (6.1.3.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.1.3.1) lib/abstract_controller/base.rb:228:in `process_action'
+actionpack (6.1.3.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.1.3.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:106:in `run_callbacks'
+actionpack (6.1.3.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.3.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.3.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.3.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.3.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.3.1) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.3.1) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.3.1) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.3.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.3.1) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.3.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.3.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.3.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/routing/mapper.rb:19:in `block in <class:Constraints>'
+actionpack (6.1.3.1) lib/action_dispatch/routing/mapper.rb:49:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.3.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started POST "/api/v1/auth" for 172.20.0.1 at 2021-07-13 15:07:19 +0000
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"confirm_success_url"=>"-", "name"=>"jhon doe", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"confirm_success_url"=>"-", "name"=>"jhon doe", "nickname"=>"nickname", "email"=>"email@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :confirm_success_url, :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :confirm_success_url, :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :confirm_success_url, :name, :nickname, :registration[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."provider" = $2 LIMIT $3[0m  [["email", "email@address.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 422 Unprocessable Entity in 218ms (Views: 0.6ms | ActiveRecord: 5.4ms | Allocations: 14720)
+
+
+Started POST "/api/v1/auth" for 172.20.0.1 at 2021-07-13 15:08:22 +0000
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"confirm_success_url"=>"-", "name"=>"test", "nickname"=>"test", "email"=>"emailtest@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "registration"=>{"confirm_success_url"=>"-", "name"=>"test", "nickname"=>"test", "email"=>"emailtest@address.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+[31mUnpermitted parameters: :confirm_success_url, :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :confirm_success_url, :name, :nickname, :registration[0m
+[31mUnpermitted parameters: :confirm_success_url, :name, :nickname, :registration[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."provider" = $2 LIMIT $3[0m  [["email", "emailtest@address.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("uid", "encrypted_password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["uid", "emailtest@address.com"], ["encrypted_password", "$2a$12$exlHpeRYLj3KhgNIjlnIOOHGDGCESBarMc4hOupoWz9GEZ9acxuuW"], ["email", "emailtest@address.com"], ["created_at", "2021-07-13 15:08:22.362420"], ["updated_at", "2021-07-13 15:08:22.362420"]]
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.8ms)[0m  [1m[33mUPDATE "users" SET "tokens" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["tokens", "\"{\\\"HtgyMXw6TlO0EkC938BZrg\\\":{\\\"token\\\":\\\"$2a$10$KlVZpBT/Ojki29nqr57hNu739JKADYK0vKX3TTVLPkLfcYPaR2sFm\\\",\\\"expiry\\\":1627398502}}\""], ["updated_at", "2021-07-13 15:08:22.423630"], ["id", 2]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 275ms (Views: 0.4ms | ActiveRecord: 14.2ms | Allocations: 8580)
+
+
